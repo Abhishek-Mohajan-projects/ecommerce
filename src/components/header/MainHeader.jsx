@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import Logo from "@/assets/images/logo.svg";
-import ImageAvatar from "@/assets/images/image-avatar.png";
+import ImageAvatar from "@/assets/images/image-avatar.jpg";
 import MenuIcon from "@/components/icons/MenuIcon";
 import CartIcon from "@/components/icons/CartIcon";
 import CloseIcon from "@/components/icons/CloseIcon";
@@ -28,7 +28,11 @@ const MainHeader = () => {
 
     return (
         <>
-            <header className={`container ${isOpenMenu ? "static" : "relative"} mx-auto flex items-center gap-8 p-4 py-4 lg:container md:gap-16 md:p-0 md:py-0 lg:w-[90%] xl:w-[85%]`}>
+            <header
+                className={`container ${
+                    isOpenMenu ? "static" : "relative"
+                } mx-auto flex items-center gap-8 p-4 py-4 lg:container md:gap-16 md:p-0 md:py-0 lg:w-[90%] xl:w-[85%]`}
+            >
                 <button className="md:hidden" onClick={handleOpenMenu}>
                     <MenuIcon />
                 </button>
@@ -67,6 +71,11 @@ const MainHeader = () => {
                         src={ImageAvatar}
                         alt="avatar-image"
                         className="w-10"
+                        style={{
+                            width: "30px",
+                            height: "30px",
+                            borderRadius: "50%",
+                        }}
                     />
                     {isOpenCart && <CartDetails />}
                 </div>
